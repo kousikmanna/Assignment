@@ -1,0 +1,25 @@
+<section class="jumbotron">
+    <div class="select-drop-down body-container make-container" ng-click="toggleOptions()">
+        <lable class="selected-lable-detail">{{selectedMakeName}}</lable>
+        <a class="arrow">v</a>
+        <ul ng-show="showOptions" class="option-container">
+            <li ng-repeat="option in selectMakeOptions" ng-click="selectOption(option)">
+                <lable>{{option.makeName}}</lable>
+            </li>
+        </ul>
+    </div>
+    <div ng-show="showModelOptions" class="select-drop-down body-container model-container" ng-click="toggleModelOptions()">
+        <lable class="selected-lable-detail">{{selectedModelName}}</lable>
+        <a class="arrow">v</a>
+        <ul ng-show="showModelDetail" class="option-container">
+            <li ng-repeat="option in selectModelOptions" ng-click="selectModelOption(option)">
+                <lable>{{option.modelName}}</lable>
+            </li>
+        </ul>
+    </div>
+</section>
+<section class="jumbotron" ng-show="showModelDescription">
+    <div class="model-description">
+        <img src="{{imageUrl}}">
+    </div>
+</section>
